@@ -23,8 +23,6 @@ There is hope, however, for terrible teams.  Another Harvard study tracked the t
 2. Engagement, or how evenly distributed communications were among all team members; and,
 3. Exploration, or how often a team engaged with individuals outside the core group.
 
-![ Figure: Three Factors to Improve Team Comms]
-
 The best performing teams consistently scored the trifecta on all three measures. The worst teams consistently screwed the pooch on communications in general, and then messed up their companies as well.
 
 Clearly then, leaders can cultivate more effective teams by improving their communication skills. Conversely, leaders might weed out poorly performing teams by squelching their negative talk. But how, outside of a snooze-inducing seminar on corporate communications, can teams be taught these skills?
