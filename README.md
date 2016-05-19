@@ -15,8 +15,6 @@
 
 SIS International, the New York-based research firm, [recently estimated](https://www.sisinternational.com/smb-communications-pain-study-white-paper-uncovering-the-hidden-cost-of-communications-barriers-and-latency/) that a typical medium-to-large company wastes $26,041 per employee per year on poor communications within teams.  SIS tracked the top factors that prevent effective communications within companies: long waits for information, irrelevant or unwanted messages, insufficient coordination and hierarchical or political barriers between individual team members.
 
-[<img style="margin:auto;" src="www.amalgamatedhumanity.com/content/images/2016/05/sis-costs-cropped.png" alt="Link to SIS International communications study">](https://www.sisinternational.com/smb-communications-pain-study-white-paper-uncovering-the-hidden-cost-of-communications-barriers-and-latency/)
-
 #### Successful teams master these three skills
 
 A [study cited by the Harvard Business Review]( http://hbswk.hbs.edu/item/the-silo-lives-analyzing-coordination-and-communication-in-multiunit-companies) echoed the findings from SIS, and added more unhappy news: many teams are hampered by a failure to communicate well across corporate boundaries; they suffer from blocking behaviors, such as aggression or negativity; and the worst teams engage in rampant triangulation—the destructive environment that emerges when employees vent their frustrations in non-constructive ways.
@@ -43,15 +41,11 @@ But how do we measure our teams’ communication skills? And assuming that we ca
 
 First, let’s skip over a debate about the best way to motivate a team.  Is intrinsic motivation, the joy of doing a job well, better than extrinsic motivation, the thrill of getting a special reward for same?  For the purposes of this article, I don’t care. We’re building a new currency after all, so our teams are getting paid in SlackCoin for getting better.
 
-![FIGURE: Measuring communications/algorithm]
-
 #### SlackCoin: measuring and monetizing better talk
 
 What if we could examine the communications among our teams, pay incentives for “good” messages, levy fines for “bad” messages, and assess the effect of these payments on team effectiveness? We’d need access to a source of real-time team communications, a private, secure, and easy way to monetize those communications, and a mechanism to measure improvements. Can it be done?
 
 ### The SlackCoin Stack
-
-![ IMAGE: System Diagram ]
 
 #### Follow along as we build this thing
 
@@ -65,7 +59,7 @@ We’ll use five free or mostly-free tools for our project: the Slack messaging 
 
 #### Building a chat analyzer bot on Slack
 
-<img style="float: right; padding: 1em; width: 200px" src="www.amalgamatedhumanity.com/content/images/2016/05/Slack-CMYK.png"> Slack, the corporate messaging platform, has the twin advantages of popularity (enterprise teams love it) and hackability (Slack allows developers to enhance its chat rooms via bots). So we’ll use our Slack-based teams as our enterprise guinea pigs. Specifically, we’ll create Slack bots that automatically analyze every message sent, use our A.I. backend to decide how “good” the message is, and use our blockchain-based currency to pay the message sender.
+Slack, the corporate messaging platform, has the twin advantages of popularity (enterprise teams love it) and hackability (Slack allows developers to enhance its chat rooms via bots). So we’ll use our Slack-based teams as our enterprise guinea pigs. Specifically, we’ll create Slack bots that automatically analyze every message sent, use our A.I. backend to decide how “good” the message is, and use our blockchain-based currency to pay the message sender.
 
 In Part 3: Shh! The Bots Can Hear Us!, I’ll discuss the nuts and bolts and share code for our Slack bots  We could have also used Facebook’s Messenger platform, which also allows autonomous bots, but Slack’s focus on corporate chatterers wins the day.
 
@@ -73,19 +67,19 @@ Of course, there's a [SlackCoin Slack channel](https://slackcoin.slack.com) for 
 
 #### A.I. sentiment scoring with IBM Watson
 
-<img style="float: right; padding: 1em; width: 200px" src="www.amalgamatedhumanity.com/content/images/2016/05/Alchemy_Banner2.jpg"> For our message analysis, we’ll turn first to IBM’s Watson A.I., which, based on IBM’s lackluster marketing, has come across (at least to me) as a heap of technologies in search of a purpose.  For our purpose though, Watson exposes powerful sentiment analysis capabilities through its new AlchemyAPI.  We’ll feed our Slack messages through Watson, and based on what Watson thinks, we'll assign a score to each message.
+For our message analysis, we’ll turn first to IBM’s Watson A.I., which, based on IBM’s lackluster marketing, has come across (at least to me) as a heap of technologies in search of a purpose.  For our purpose though, Watson exposes powerful sentiment analysis capabilities through its new AlchemyAPI.  We’ll feed our Slack messages through Watson, and based on what Watson thinks, we'll assign a score to each message.
 
 I’ll discuss the factors that go into our sentiment scoring in Part 5: But How Does the Terminator Feel?  We could have also used Microsoft’s Text Analytics API, or one of very many other open language processing tools (including a [“Russian Sentiment Analysis” API](http://semanticanalyzer.info/blog/), which sounds so [deliciously 19th-century](https://www.youtube.com/watch?v=wdGEtrpKlAw).
 
 #### Classifying relationships in OrientDB
 
-<img style="float: right; padding: 1em; width: 200px" src="www.amalgamatedhumanity.com/content/images/2016/05/orientdb_logo_2x11.png"> As smart as Watson seems, its sentiment analysis is only one part of our communications scoring algorithm, and really, only the negative part. To build effective teams, we want to measure not just their sentiment, but their energy (quantity of communications), engagement (distribution of communications), and exploration (engagement with outsiders).  For those measures, we’re going to need a social graph database that can store both the directionality and the positive/negative score of our Slack chats. Here, we’ll use OrientDB.
+As smart as Watson seems, its sentiment analysis is only one part of our communications scoring algorithm, and really, only the negative part. To build effective teams, we want to measure not just their sentiment, but their energy (quantity of communications), engagement (distribution of communications), and exploration (engagement with outsiders).  For those measures, we’re going to need a social graph database that can store both the directionality and the positive/negative score of our Slack chats. Here, we’ll use OrientDB.
 
 We’ll discuss the data schema and how to store and query signed digraphs in Part 4: Can’t We Be Friends. We could have also used Neo4J, a more popular graph database for this project, but OrientDB's language support, capabilities, licensing and robustness make it the better choice.
 
 #### Building on the blockchain with Eris and Ethereum
 
-<p><img style="float: right; width: 200px; padding: 1em;" src="www.amalgamatedhumanity.com/content/images/2016/05/eris_platform_logo.png">  Using a custom blockchain-based currency for SlackCoin isn’t the most obvious choice. After all, we could easily save our users' scores and associated payments into any plain old database.  However, a normal database won’t gain us the unique advantages of a blockchain data store, which include:</p>
+Using a custom blockchain-based currency for SlackCoin isn’t the most obvious choice. After all, we could easily save our users' scores and associated payments into any plain old database.  However, a normal database won’t gain us the unique advantages of a blockchain data store, which include:
 
 - an independently verifiable record of user identities and transactions that doesn’t rely on a central authority; and,
 - a transparent record of account balances that should motivate other users to do better
@@ -102,11 +96,11 @@ In Part 2: Let’s Build A Bank!, I'll cover our economic model in depth, contra
 
 #### Scaling with event-driven compute containers
 
-<p><img style="float: left; width: 150px; padding: 1.5em;" src="www.amalgamatedhumanity.com/content/images/2016/05/aws-lambda.png"> Applications that deal with conversations and payments can be difficult to provision and scale because they tend to be clumpy—that is, on large scale deployments, compute resources are needed in unpredictable bursts, and in our case, each conversation requires low-latency coordination between multiple compute services.</p>
+Applications that deal with conversations and payments can be difficult to provision and scale because they tend to be clumpy—that is, on large scale deployments, compute resources are needed in unpredictable bursts, and in our case, each conversation requires low-latency coordination between multiple compute services.
 
-<p><img style="float: left; width: 150px; padding: 1.5em;" src="www.amalgamatedhumanity.com/content/images/2016/05/mesos-logo.png"> Architecturally, we want the SlackCoin platform to be quick, portable, fault tolerant, easy to deploy, inexpensive (or free), and scalable with as little active babysitting as possible (no pager duty!)</p>
+Architecturally, we want the SlackCoin platform to be quick, portable, fault tolerant, easy to deploy, inexpensive (or free), and scalable with as little active babysitting as possible (no pager duty!)
 
-<p><img style="float: left; width: 150px; padding: 1.5em;" src="www.amalgamatedhumanity.com/content/images/2016/05/docker-logo.png"> In Part 6: Money From Nothing, And It’s (Almost) Free), I describe how we'll treat our Slack conversations as event queues that will use AWS Lambda and Docker containers coordinated by Mesos to spin up (or down) our containerized compute resources as needed. As a bonus, you’ll be able to deploy and run your own open-source SlackCoin instances to your heart’s content.</p>
+In Part 6: Money From Nothing, And It’s (Almost) Free), I describe how we'll treat our Slack conversations as event queues that will use AWS Lambda and Docker containers coordinated by Mesos to spin up (or down) our containerized compute resources as needed. As a bonus, you’ll be able to deploy and run your own open-source SlackCoin instances to your heart’s content.
 
 #### Wrap up and Analysis
 
