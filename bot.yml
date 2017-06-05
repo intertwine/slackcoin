@@ -1,0 +1,11 @@
+name: SlackCoin
+author: Bryan Young
+author_avatar: images/author_avatar.jpg
+email: slackcoin@intertwinesys.com
+description: SlackCoin analyzes group conversations and pays via the Ethereum blockchain
+avatar: images/avatar.jpg
+background: images/slackcoin_background.jpg
+slackscopes:
+  - bot
+  - commands
+  - incoming-webhook
