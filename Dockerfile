@@ -1,2 +1,2 @@
-FROM node:4-onbuild
+FROM node:6.7-onbuild
 MAINTAINER <bryan@intertwinesys.com>

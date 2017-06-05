@@ -4,7 +4,7 @@
   "description": "A Slack Bot to analyze and pay Slack chat participants with Slackcoin",
   "main": "slackbot.js",
   "scripts": {
-		"start": "node slackbot.js",
+    "start": "node slackbot.js",
     "test": "test/coinbot-test.js"
   },
   "repository": {
@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/intertwine/slackcoin#readme",
   "dependencies": {
-    "debug": "^2.2.0",
-    "slackbots": "^0.5.1",
-    "sqlite3": "^3.1.4"
+    "debug": "^2.6.8",
+    "dotenv": "^4.0.0",
+    "slackbots": "^1.0.2"
   }
 }
