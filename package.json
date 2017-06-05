@@ -4,8 +4,8 @@
   "description": "A Slack Bot to analyze and pay Slack chat participants with Slackcoin",
   "main": "slackbot.js",
   "scripts": {
-    "start": "node slackbot.js",
-    "test": "test/coinbot-test.js"
+    "watch": "nodemon server.js",
+    "test": "standard"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,13 @@
   "dependencies": {
     "debug": "^2.6.8",
     "dotenv": "^4.0.0",
-    "slackbots": "^1.0.2"
+    "express": "^4.15.3",
+    "nodemon": "^1.11.0",
+    "slapp": "^2.4.1",
+    "slapp-context-beepboop": "^1.4.0",
+    "slapp-convo-beepboop": "^1.0.1"
+  },
+  "devDependencies": {
+    "standard": "^10.0.2"
   }
 }

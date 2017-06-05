@@ -1,5 +1,5 @@
 version: '2'
 services:
   slackbot:
-    build: ./node-slackbot
-    env_file: ./node-slackbot/.env
+    build: .
+    env_file: .env
