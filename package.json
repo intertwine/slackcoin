@@ -1,0 +1,39 @@
+{
+  "name": "slackcoin-coinbot",
+  "version": "0.0.1",
+  "description": "A Slack Bot to analyze and pay Slack chat participants with Slackcoin",
+  "main": "slackbot.js",
+  "scripts": {
+    "watch": "nodemon server.js",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intertwine/slackcoin.git"
+  },
+  "keywords": [
+    "slackcoin",
+    "slack",
+    "blockchain",
+    "cryptocurrency",
+    "sentiment-analysis"
+  ],
+  "author": "Bryan Young",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/intertwine/slackcoin/issues"
+  },
+  "homepage": "https://github.com/intertwine/slackcoin#readme",
+  "dependencies": {
+    "debug": "^2.6.8",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "nodemon": "^1.11.0",
+    "slapp": "^2.4.1",
+    "slapp-context-beepboop": "^1.4.0",
+    "slapp-convo-beepboop": "^1.0.1"
+  },
+  "devDependencies": {
+    "standard": "^10.0.2"
+  }
+}
